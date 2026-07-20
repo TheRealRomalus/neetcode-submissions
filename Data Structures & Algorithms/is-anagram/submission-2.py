@@ -1,0 +1,30 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+
+        dict = {}
+        
+        for x in s:
+            if x in dict:
+                dict[x] = dict.get(x) + 1
+            else:
+                dict[x] = 1
+  
+        for y in t:
+            if y in dict and dict.get(y) != 0:
+                dict[y] = dict.get(y)-1
+            else:
+                return False
+        return True
+
+
+
+
+
+            
+
+
+
+
+        
